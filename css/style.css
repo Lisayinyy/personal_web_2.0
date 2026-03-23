@@ -1,3 +1,21 @@
+/* Design Tokens — CSS Variables */
+:root {
+  --h3-font-size: 1.3em;
+  --font-medium: 500;
+  --mb-0-25: 0.25rem;
+  --smaller-font-size: 0.875em;
+  --section-padding: 20px;
+  --section-margin: 60px 50px 30px 40px;
+  --primary-color: #00274C;
+  --accent-color: #775c51;
+  --highlight-purple: #540b88;
+  --highlight-red: #940303;
+  --text-muted: #7c8594;
+  --bg-warm: #fff7f3;
+  --card-radius: 20px;
+  --transition-base: 0.3s ease;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: 60px 50px 30px 40px;
@@ -960,3 +978,304 @@ div.right-q {
   background: white;
   z-index: 2;
 }
+
+/* Neural Network Demo Styles */
+.neural-network-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 20px;
+}
+
+.network-layers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.layer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.input-layer .neuron {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #2196F3;
+  animation: neuron-pulse 1.5s ease-in-out infinite;
+}
+
+.hidden-layer .neuron {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #FF9800;
+  animation: neuron-pulse 1.5s ease-in-out infinite 0.3s;
+}
+
+.output-layer .neuron {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #4CAF50;
+  animation: neuron-pulse 1.5s ease-in-out infinite 0.6s;
+}
+
+@keyframes neuron-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; }
+}
+
+/* Data points for clustering */
+.data-point {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #775c51;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    margin: 30px 20px 20px 20px;
+  }
+
+  section {
+    margin: 30px 20px 20px 20px;
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  h3 {
+    margin: 10px 0;
+    font-size: 1.1em;
+  }
+
+  h4 {
+    margin: 8px 0;
+    font-size: 1em;
+  }
+
+  .home-content {
+    flex-direction: column;
+  }
+
+  .text-content > div {
+    padding: 10px 0;
+  }
+
+  .photo-section {
+    flex: none;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .personal-photo-container {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .projects-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .qualification__data {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .qualification__rounder {
+    display: none;
+  }
+
+  .qualification__line {
+    display: none;
+  }
+
+  .left-q,
+  .right-q {
+    margin: 0;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .qualification__tabs {
+    font-size: 1.1em;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .qualification__button {
+    margin: 0 1rem;
+  }
+
+  .category-nav {
+    overflow-x: auto;
+    justify-content: flex-start;
+    border-radius: 20px;
+  }
+
+  .category-btn {
+    padding: 10px 16px;
+    font-size: 0.9em;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  #contact {
+    position: static;
+    flex-direction: row;
+    transform: none;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+
+/*==================== LIFE SECTION ====================*/
+#ball-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  margin: 60px 0;
+  flex-wrap: wrap;
+}
+
+.art-ball,
+.skiing-ball {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  font-size: 1.3em;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: gentle-float 3s ease-in-out infinite;
+}
+
+.art-ball {
+  background: linear-gradient(135deg, #e91e63, #f48fb1);
+}
+
+.skiing-ball {
+  background: linear-gradient(135deg, #2196F3, #90CAF9);
+  animation-delay: 1.5s;
+}
+
+.art-ball:hover,
+.skiing-ball:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.highlighted-painting {
+  font-size: 1.2em;
+  font-weight: 800;
+  color: #e91e63;
+  text-decoration: none;
+}
+
+/*==================== ART GALLERY PAGE ====================*/
+.gallery-section {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.art-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/*==================== SKIING GALLERY PAGE ====================*/
+.gallery-section h1 {
+  text-align: center;
+  margin: 50px 0 30px 0;
+  color: #3b3636;
+  font-size: 2.5em;
+  font-weight: 900;
+}
+
+.gallery-section p {
+  color: #7c8594;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/*==================== HEADER ====================*/
+.header {
+  padding: 0;
+}
+
+/*==================== FOOTER ====================*/
+footer {
+  margin: 60px 50px 30px 40px;
+  padding: 20px;
+}
+
+/*==================== LIFE SECTION OVERRIDES ====================*/
+#life {
+  text-align: center;
+}
+
+#life h3 {
+  margin: 15px auto;
+  text-align: center;
+}
+
